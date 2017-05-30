@@ -1,7 +1,52 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+	</head>
+
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	<h1>Nick Anthony</h1>
+
+	<button id="button">Test!</button>
+	</br>
+	</br>
+	<div id="display">Test Display</div>
+	
 </body>
+
+
+
+<script type="text/javascript">
+	window.onload = function() {
+	// $( "#button" ).click(function() {
+	  var htmlString = $( this ).html();
+	  $( "#display" ).text( "hello" );
+
+	  var url = "http://www.gotuftsjumbos.com/sports/fball/index";
+	  var baseURI = "http://www.gotuftsjumbos.com";
+	  var htmlString = "";
+
+	  $.ajax({
+	     url: url,
+	     type: "post",
+	     dataType: "json",
+	     error: function(data, status) {
+	     	console.log(data.responseText);
+	     	var elements = $(data.responseText);
+			var found = $('.title', elements);
+
+			$.each(found, function( index, value ) {
+				if (index <= 5) {
+					var title_pathname = "http://www.gotuftsjumbos.com" + value.pathname;
+					$( "#display" ).append('<p> <a href=\"' + title_pathname + '\">' + value.text + '</a> </p>');
+				}
+			  	console.log( index + ": " + value.text );
+			});
+	     }
+		});
+	};
+</script>
+
 </html>
