@@ -24,13 +24,13 @@
 	  var htmlString = $( this ).html();
 	  $( "#display" ).text( "hello" );
 
-	  var url = "local.php";
+	  var url = "http://www.gotuftsjumbos.com/sports/fball/index";
 	  var baseURI = "http://www.gotuftsjumbos.com";
 	  var htmlString = "";
 
 	  $.ajax({
 	     url: url,
-	     type: "post",
+	     type: "get",
 	     dataType: "json",
 	     error: function(data, status) {
 	     	console.log(data.responseText);
