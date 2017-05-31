@@ -32,9 +32,11 @@
 	     dataType: "json",
 	     success: function(data) {
 	     	console.log(data.responseText);
+	     	alert("success");
 	     },
 	     error: function(data, status) {
 	     	console.log(data.responseText);
+	     	alert("error");
 	     	var elements = $(data.responseText);
 			var found = $('.title', elements);
 
