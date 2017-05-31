@@ -30,9 +30,9 @@
 	     url: url,
 	     type: "get",
 	     dataType: "json",
-	     success: function(data, status) {
+	     success: function(data) {
 	     	console.log(data.responseText);
-	     }
+	     },
 	     error: function(data, status) {
 	     	console.log(data.responseText);
 	     	var elements = $(data.responseText);
